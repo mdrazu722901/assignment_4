@@ -31,4 +31,19 @@ function teketPrice(increase) {
     inputValue.value = newInputValue;
     const economyPrice = newInputValue * 100;
     document.getElementById("economy-cost").innerHTML = "economy" + " " + ("$" + economyPrice);
+    calculateTotal();
+}
+
+//==============================================
+
+function calculateTotal() {
+    const FirstClassInput = document.getElementById("input-FirstClass");
+    const FirstClassNumber = parseInt(FirstClassInput.value);
+
+
+    const Economy = document.getElementById("input-economy");
+    const EconomyNumber = parseInt(Economy.value);
+
+    const totalPrice = FirstClassNumber * 150 + EconomyNumber * 100;
+    document.getElementById("total_price").innerText = '$' + totalPrice;
 }
